@@ -1,4 +1,13 @@
 terraform {
+
+  cloud{
+    organization = "jv-skillstorm-cohort"
+
+    workspaces {
+      name = "jverdecia-dev" # dev or prod
+    }
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -10,7 +19,7 @@ terraform {
 # Student Used Provider
 
 # provider "aws" {
-#   profile = "20231113"
+#   profile = "terraformcloud-demo"
 #   default_tags {
 #     tags = {
 #       env = "dev"
@@ -18,7 +27,7 @@ terraform {
 #   }
 # }
 
-# Justin's Provider block (will be different from yours)
+# New Provider Block
 provider "aws" {
   region = "us-east-1"
   default_tags {
